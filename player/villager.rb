@@ -7,7 +7,13 @@ class Villager < Player
   end
 
   def pick_victim_by_voting
+     if cop?
+      puts "Cop voted for #{$test}"
+      return cop_selects
+    else
     return (@game.players.alive - [self]).sample
+    end
+
   end
 
 protected

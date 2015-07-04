@@ -1,6 +1,7 @@
 require_relative 'player/player_collection'
 require_relative 'player/wolf'
 require_relative 'player/villager'
+require_relative 'player/cop'
 require_relative 'player/voting'
 
 class Game
@@ -55,6 +56,7 @@ private
     $logger.log "It's night time!"
     $logger.log "Everybody slept"
     @players.doctor.save_player
+    @players.cop.cop_selects
     $logger.log "Wolves wokeup"
     wolves_kill_villager
   end
